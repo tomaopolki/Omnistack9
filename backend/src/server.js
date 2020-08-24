@@ -2,10 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
 
-
 const app = express();
 
-mongoose.connect(process.env.MONGO_URL, {
+const { mongoUrl } = require('./config');
+
+mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
